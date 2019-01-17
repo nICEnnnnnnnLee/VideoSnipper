@@ -1,0 +1,40 @@
+{
+
+  "description": "Get First Video Source Link",
+  "manifest_version": 2,
+  "name": "VideoSnipper",
+  "version": "2.0",
+  "homepage_url": "https://github.com/nICEnnnnnnnLee/VideoSnipper",
+  "applications": {
+    "gecko": {
+      "strict_min_version": "55.0a2"
+    }
+  },
+  "permissions": [
+      "tabs",
+      "clipboardWrite",
+      "downloads",
+      "notifications",
+      "<all_urls>"
+  ],
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+      "browser_style": true,
+      "default_icon": {
+        "48": "icons/border-48.png"
+      },
+      "default_title": "Get first Video source link"
+    },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["printVideo.js"]
+    }
+  ]
+
+}
