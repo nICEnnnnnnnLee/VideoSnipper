@@ -1,4 +1,9 @@
 # About VideoSnipper
+## Content
+
+* [Brief](#brief)
+* [How to Use](#how-to-use)
+* [Usage](#usage)
 
 ## Brief
 VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It caches the video source in the html page, and you can do follows through the Addon:  
@@ -18,7 +23,7 @@ VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It 
     * It may partly work if the Firefox downloader cannot deal with the stream protocal, try to get it youself using the link copied in the Clipboard
 
 * Since some page just display Preview Pics instead of Videos, you may need play the video first to let the javascript load the video source. 
-* The Addon only catches **Single** video in one page, just get in the more detailed page if videos included.
+* The Addon only catches **Single** video in one page, just get in the more detailed page if videos included.(As Step 2.in **How to Use** mentioned)
 
 ## Pros & Cons 
 * Pros
@@ -30,7 +35,7 @@ VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It 
     * Not worked with video played with no video tag in HTML5. But may consider for customized analysis. It depends.
 
 ## Test
-* 2019/01/17: The Addon test pass on the shared video link of "∂∂“Ù ”∆µ","øÏ ÷ ”∆µ","Œ¢≤© ”∆µ","√Î≈ƒ ”∆µ"(several popular apps in China)
+* 2019/01/17: The Addon test pass on the shared video link of "Douyin","Kuaishou","Weibo Video","Miaopai"(several popular apps in China)
 
 ## ToDos  
 * Minimize the requied Permission "tabs" to "activeTab"
