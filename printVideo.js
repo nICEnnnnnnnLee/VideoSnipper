@@ -1,30 +1,44 @@
 (function() {
   /**
-   * Check and set a global guard variable.
-   * If this content script is injected into the same page again,
-   * it will do nothing next time.
-   */
+	 * Check and set a global guard variable. If this content script is injected
+	 * into the same page again, it will do nothing next time.
+	 */
   if (window.hasRun) {
     return;
   }
   window.hasRun = true;
-
+  function toAbsURL(url){
+        var a = document.createElement('a');
+        a.href = url;
+        return a.href;
+    }
+    
   function printVideoInfo(){
         var video = document.getElementsByTagName("video");
-        //console.log('------------------1');
-        //for(var i=0; i<video.length; i++){
-        for(var i=0; i<1; i++){
-            //console.log('------------------2');
-            var urlLink = video[i].getAttribute("src");
+        var urlLink;
+        for(var i=0; i<video.length; i++){
+            urlLink = video[i].getAttribute("src");
             if( urlLink == null){
-                //console.log('------------------3');
-                urlLink = getElementsByTagName("source")[0].getAttribute("src");
+                try{
+                    urlLink = video[i].getElementsByTagName("source")[0].getAttribute("src");
+                }catch(err){}
+                
             }
-            console.log(urlLink);
-            copyToClipboard(urlLink);
-            downloadFile(urlLink);
+            if( urlLink != null){
+                urlLink = toAbsURL(urlLink);
+                console.log(urlLink);
+                copyToClipboard(urlLink);
+                downloadFile(urlLink);
+                break;
+            }
+        }
+        
+        if( urlLink == null){
+            alert("There is no video catched!");
         }
   }
+  
+
   function downloadFile(url){
     browser.runtime.sendMessage({
         "action": "download",
@@ -33,6 +47,7 @@
         }
     });
   }
+  
   function copyToClipboard (text) {
         var textArea = document.createElement("textarea");
           textArea.style.position = 'fixed';
@@ -50,43 +65,23 @@
           textArea.select();
           try {
             var successful = document.execCommand("Copy");
-            if(successful){
-                browser.runtime.sendMessage({
-                    "action": "notify", 
-                    "value": {
-                        "title" : "The link is copied to clipboard!",
-                        "content" : "The Video Link is:\r\n" + text,
-                    }
-                });
-            }else{
-                browser.runtime.sendMessage({
-                    "action": "notify", 
-                    "value": {
-                        "title" : "The link is failed to be copied to clipboard!",
-                        "content" : "The Video Link is:\r\n" + text,
-                    }
-                });
-            }
+            alert("The Video Link is:\r\n" + text);
           } catch (err) {
-                browser.runtime.sendMessage({
-                    "action": "notify", 
-                    "value": {
-                        "title" : "The link is failed to be copied to clipboard!",
-                        "content" : "The Video Link is:\r\n" + text,
-                    }
-                });
+             alert("Fail to Copy");
           }
           document.body.removeChild(textArea);
     }
+    
+    
   /**
-   * Listen for messages from the background script.
-  */
+	 * Listen for messages from the background script.
+	 */
   browser.runtime.onMessage.addListener((message) => {
     if (message.command === "printVideoInfo") {
       printVideoInfo();
     };
   });
-  //printVideoInfo();
+  // printVideoInfo();
 })();
 
 
