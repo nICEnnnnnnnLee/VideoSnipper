@@ -3,7 +3,10 @@
 
 * [Brief](#brief)
 * [How to Use](#how-to-use)
-* [Usage](#usage)
+* [Notice](#notice)
+* [Pros & Cons](#pros--cons )
+* [Test](#test)
+* [ToDos](#ToDos)
 
 ## Brief
 VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It caches the video source in the html page, and you can do follows through the Addon:  
@@ -14,7 +17,9 @@ VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It 
 * Step 1. Visit the page you enjoy the video
 * Step 2. Play the video (Mostly unnessesary, just do this if failed in Step 3)  
 * Step 3. Click/Tap the button of this Addon in tool bar( Top-right the FireFox Window on PC, in menu displayed after tap the Top-right Button on Phone)
+![run](https://raw.githubusercontent.com/nICEnnnnnnnLee/VideoSnipper/master/pics/1.png)
 * Step 4. You will receive a notice if source exists, and the link copied and download task auto set update-log
+![result](https://raw.githubusercontent.com/nICEnnnnnnnLee/VideoSnipper/master/pics/2.png)
 
 ## Notice
 * The Addon works only if: 
