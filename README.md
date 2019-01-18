@@ -43,7 +43,10 @@ VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It 
 * 2019/01/17: The Addon test pass on the shared video link of "Douyin","Kuaishou","Weibo Video","Miaopai"(several popular apps in China)
 
 ## ToDos  
-* Minimize the requied Permission "tabs" to "activeTab"
-* Cut the Permission "notifications", using default js function "alert" instead
-* Trans the url from to Relative URL to ABS URL
 * Design a new icon for Addon
+
+## Update Log
+* Version 2.1
+    * Minimize the requied Permission "tabs" to "activeTab"
+    * Cut the Permission "notifications", using default js function "alert" instead
+    * Trans the url from to Relative URL to ABS URL
