@@ -28,8 +28,8 @@ VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It 
     * You have the permission of access to the video source (This avoids potential copyright invation)
     * It may partly work if the Firefox downloader cannot deal with the stream protocal, try to get it youself using the link copied in the Clipboard
 
-* Since some page just display Preview Pics instead of Videos, you may need play the video first to let the javascript load the video source. 
-* The Addon only catches **Single** video in one page, just get in the more detailed page if videos included.(As Step 2.in **How to Use** mentioned)
+* Since some page just display Preview Pics instead of Videos, you may need play the video first to let the javascript load the video source.(As Step 2.in **How to Use** mentioned) 
+* The Addon only catches **Single** video in one page, just get in the more detailed page if videos included.
 
 ## Pros & Cons 
 * Pros
