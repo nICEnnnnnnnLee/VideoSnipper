@@ -11,7 +11,8 @@ body {
   margin-bottom: 0.5em;
 }
 
-label {
-  float: right;
+span {
+	width: 102px;
+	display: inline-block;
 }
 
