@@ -7,6 +7,7 @@
 * [Pros & Cons](#pros--cons )
 * [Test](#test)
 * [ToDos](#ToDos)
+* [Update Log](#update-log)
 
 ## Brief
 VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It caches the video source in the html page, and you can do follows through the Addon:  
@@ -46,6 +47,9 @@ VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It 
 * Design a new icon for Addon
 
 ## Update Log
+* Version 2.2
+    * Add Config to decide whether to alert, copy and download onClick the Addon button
+
 * Version 2.1
     * Minimize the requied Permission "tabs" to "activeTab"
     * Cut the Permission "notifications", using default js function "alert" instead
