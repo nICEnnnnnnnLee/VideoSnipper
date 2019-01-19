@@ -13,7 +13,7 @@
         return a.href;
     }
     
-  function printVideoInfo(){
+  function printVideoInfo(config){
         var video = document.getElementsByTagName("video");
         var urlLink;
         for(var i=0; i<video.length; i++){
@@ -27,13 +27,21 @@
             if( urlLink != null){
                 urlLink = toAbsURL(urlLink);
                 console.log(urlLink);
-                copyToClipboard(urlLink);
-                downloadFile(urlLink);
+                console.log(config.isCopy);
+                if(config.isCopy){
+                	copyToClipboard(urlLink);
+                }
+                if(config.isAlert){
+                	alert("The Video Link is:\r\n" + urlLink);
+                }
+                if(config.isDown){
+                	downloadFile(urlLink);
+                }
                 break;
             }
         }
         
-        if( urlLink == null){
+        if( urlLink == null && config.isAlert){
             alert("There is no video catched!");
         }
   }
@@ -65,9 +73,8 @@
           textArea.select();
           try {
             var successful = document.execCommand("Copy");
-            alert("The Video Link is:\r\n" + text);
           } catch (err) {
-             alert("Fail to Copy");
+             // alert("Fail to Copy");
           }
           document.body.removeChild(textArea);
     }
@@ -77,9 +84,10 @@
 	 * Listen for messages from the background script.
 	 */
   browser.runtime.onMessage.addListener((message) => {
-    if (message.command === "printVideoInfo") {
-      printVideoInfo();
-    };
+	if (message.command === "printVideoInfo") {
+		// console.log(message.config);
+	    printVideoInfo(message.config);
+	};
   });
   // printVideoInfo();
 })();

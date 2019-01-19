@@ -5,9 +5,18 @@ function onClickBtn() {
 	}).then(sendSig);
 }
 function sendSig(tabs) {
-	browser.tabs.sendMessage(tabs[0].id, {
-		command : "printVideoInfo",
+	// get configs from local storage
+	browser.storage.local.get("configs").then(results => {
+		browser.tabs.sendMessage(tabs[0].id, {
+			command : "printVideoInfo",
+			config : results.configs,
+		});
 	});
+	
+}
+
+function onError(e) {
+	console.error(e);
 }
 
 function notify(msg) {

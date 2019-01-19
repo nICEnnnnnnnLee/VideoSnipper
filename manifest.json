@@ -2,7 +2,7 @@
 	"description": "A Simple, Free Video Downloader basing on WebExtensions API",
 	"manifest_version": 2,
 	"name": "VideoSnipper",
-	"version": "2.1",
+	"version": "2.2",
 	"homepage_url": "https://github.com/nICEnnnnnnnLee/VideoSnipper",
 	"applications": {
 		"gecko": {
@@ -13,6 +13,7 @@
 		"activeTab",
 		"clipboardWrite",
 		"downloads",
+		"storage",
 		"<all_urls>"
 	],
 	"icons": {
@@ -20,8 +21,13 @@
 	},
 	"background": {
 		"scripts": [
-			"background.js"
+			"background/config-init.js",
+			"background/background.js"
 		]
+	},
+	"options_ui": {
+		"page": "options/options.html",
+		"browser_style": true
 	},
 	"browser_action": {
 		"browser_style": true,
