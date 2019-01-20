@@ -30,6 +30,7 @@ VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It 
 
 * Since some page just display Preview Pics instead of Videos, you may need play the video first to let the javascript load the video source.(As Step 2.in **How to Use** mentioned) 
 * The Addon only catches **Single** video in one page, just get in the more detailed page if videos included.
+* Try some other User Agents of PC, Android or iOS, things may go diffrent for Mobile and PC. Bilibili.com, for example.
 
 ## Pros & Cons 
 * Pros
@@ -41,6 +42,7 @@ VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It 
     * Not worked with video played with no video tag in HTML5. But may consider for customized analysis. It depends.
 
 ## Test
+* 2019/01/20: The Addon doesn't work well on site - "www.bilibili.com", but could download mp4 video when the User Agent set a Mobile Android one and url redirect to "m.bilibili.com". However, the quality seems up to 480p.
 * 2019/01/17: The Addon test pass on the shared video link of "Douyin","Kuaishou","Weibo Video","Miaopai"(several popular apps in China)
 
 ## ToDos  

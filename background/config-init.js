@@ -1,17 +1,17 @@
 /*
 Default settings. Initialize storage to these values.
-*/
+ */
 var configs = {
-	isAlert: true,
-	isDown: true,
-	isCopy: true
+	isAlert : true,
+	isDown : true,
+	isCopy : true
 }
 
 /*
  * Generic error logger.
  */
 function onError(e) {
-  console.error(e);
+	console.error(e);
 }
 
 /*
@@ -19,9 +19,11 @@ function onError(e) {
  * the default settings.
  */
 function checkStoredSettings(storedSettings) {
-  if (!storedSettings.authCredentials) {
-    browser.storage.local.set({configs});
-  }
+	if (!storedSettings.configs) {
+		browser.storage.local.set({
+			configs : configs
+		});
+	}
 }
 
 const gettingStoredSettings = browser.storage.local.get();
