@@ -4,7 +4,9 @@ Default settings. Initialize storage to these values.
 var configs = {
 	isAlert : true,
 	isDown : true,
-	isCopy : true
+	isCopy : true,
+	isOpenTab : false,
+	maxTabNum : 3
 }
 
 /*
@@ -19,9 +21,13 @@ function onError(e) {
  * the default settings.
  */
 function checkStoredSettings(storedSettings) {
-	if (!storedSettings.configs) {
+	var temp = storedSettings.configs;
+	browser.storage.local.set({
+		configs : configs
+	});
+	if(temp){
 		browser.storage.local.set({
-			configs : configs
+			configs : temp
 		});
 	}
 }
