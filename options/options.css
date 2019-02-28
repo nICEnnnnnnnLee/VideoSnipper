@@ -12,7 +12,7 @@ body {
 }
 
 span {
-	width: 102px;
+	width: 150px;
 	display: inline-block;
 }
 select {
@@ -21,6 +21,7 @@ select {
 }
 
 label {
-    width: 220px;
+    width: 270px;
     display: inline-block;
+    border-bottom: 1px dashed red;
 }
