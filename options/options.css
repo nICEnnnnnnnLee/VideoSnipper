@@ -15,4 +15,13 @@ span {
 	width: 102px;
 	display: inline-block;
 }
+select {
+    width: 80px;
+    margin-left: 8px;
+}
 
+label {
+    width: 220px;
+    display: inline-block;
+    border: 1px solid red;
+}
