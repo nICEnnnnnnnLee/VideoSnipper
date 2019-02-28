@@ -21,11 +21,14 @@
     	
     	//open embed sub page if video not found
     	//WARNING: this cannot differ ads and may pop it up
-    	if(!findSource && config.isOpenTab){
+    	if(!findSource && frames && config.isOpenTab){
     		var cnt = 0;
     		for(var i = 0; i < frames.length; i++){
     			var url = frames[i].getAttribute("src");
-    			if(url.substr(0,4) == "http"){
+                if(url.substr(0,2) == "//"){
+                    url = window.location.protocol + url;
+                }
+    			if(url.substr(0,4) == "http" ) {
     				cnt ++;
     				browser.runtime.sendMessage({
         	            "action": "openTab",
@@ -42,7 +45,7 @@
     	}
     	if(!findSource && config.isAlert) {
     		var tips = "There is no video catched!";
-    		if(frames.length > 0){
+    		if(frames && frames.length > 0){
     			tips += "\r\nTry to catch it in the embed pages..."
     		}
     		alert(tips);
