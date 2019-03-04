@@ -5,8 +5,8 @@ var configs = {
 	isAlert : true,
 	isDown : true,
 	isCopy : true,
-	isOpenTab : false,
-	maxTabNum : 3
+	isOpenTab : true,
+	maxTabNum : 1
 }
 
 /*

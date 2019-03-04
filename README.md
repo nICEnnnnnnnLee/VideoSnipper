@@ -48,7 +48,12 @@ VideoSnipper is a Simple, Free Video Downloader basing on WebExtensions API. It 
 ## ToDos  
 * Design a new icon for Addon
 
-## Update Log
+## Update Log  
+* Version 2.3
+    * The new function in 2.2r5 works well in my personal test, featrue included.  
+    * Correct the ```strict_min_version```.
+    * Some UI changes in the config page.
+    
 * Version 2.2r5
     * (Experimential) Try to open the embed pages if failed at current page, you can do things again in the new pages and then most likely susucceed.
     

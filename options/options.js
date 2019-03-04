@@ -63,9 +63,6 @@ function onError(e) {
 const gettingStoredSettings = browser.storage.local.get();
 gettingStoredSettings.then(updateUI, onError);
 //init tabNumOption
-for(var i=1; i<8; i++){
-	tabNumOption[0].innerHTML += ("<option value='" + i +"'>" + i +"</option>"); 
-}
 tabNumOption[0].value = 3;
 
 for (var i = 0; i < configBtns.length; i++) {

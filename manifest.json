@@ -2,11 +2,11 @@
 	"description": "A Simple, Free Video Downloader basing on WebExtensions API",
 	"manifest_version": 2,
 	"name": "VideoSnipper",
-	"version": "2.02r5",
+	"version": "2.3",
 	"homepage_url": "https://github.com/nICEnnnnnnnLee/VideoSnipper",
 	"applications": {
 		"gecko": {
-			"strict_min_version": "55.0a2"
+			"strict_min_version": "57.0"
 		}
 	},
 	"permissions": [
